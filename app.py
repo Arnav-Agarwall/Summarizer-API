@@ -8,8 +8,10 @@ import os
 
 app = Flask(__name__)
 
+
 # Initialize the language model and prompt
-llm = HuggingFaceHub(repo_id="facebook/bart-large-cnn", huggingfacehub_api_token="YOUR_HUGGINGFACE_API_TOKEN")
+huggingface_token = os.getenv("HUGGINGFACE_API_TOKEN")
+llm = HuggingFaceHub(repo_id="facebook/bart-large-cnn", huggingfacehub_api_token=huggingface_token)
 prompt = PromptTemplate(
     input_variables=["text"],
     template="Please provide a concise summary for the following text:\n\n{text}\n\nSummary:"
