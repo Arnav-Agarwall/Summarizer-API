@@ -1,0 +1,5 @@
+Flask
+langchain
+huggingface_hub
+python-docx
+fpdf
